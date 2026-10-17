@@ -16,11 +16,7 @@ void main() async {
 	// .env ဖိုင်ကို ဖတ်ရှုရန်
   //await dotenv.load(fileName: ".env");
   // .env ဖိုင် မရှိပါက Error မတက်စေရန် try-catch အုပ်ထားပါ
-  try {
-    await dotenv.load(fileName: ".env");
-  } catch (e) {
-    debugPrint("Could not load .env file: $e");
-  }
+
   runApp(const DrSoeLwinApp());
 }
 
@@ -364,8 +360,11 @@ class _DhammaAiChatPageState extends State<DhammaAiChatPage> {
   
   
 // API Key ယူသည့်နေရာတွင် Env မရှိပါက Environment variable မှ ယူရန်:
-  final String _geminiApiKey = dotenv.env['GEMINI_API_KEY'] ?? 
-    const String.fromEnvironment('GEMINI_API_KEY', defaultValue: '');
+ // final String _geminiApiKey = dotenv.env['GEMINI_API_KEY'] ?? 
+ static const String _geminiApiKey = String.fromEnvironment(
+  'GEMINI_API_KEY',
+  defaultValue: '',
+);
 
   final String _systemPrompt = '''
 သင်သည် ဗုဒ္ဓဘာသာ တရားဓမ္မများနှင့် ဆရာကြီး ဒေါက်တာစိုးလွင်၏ ဟောပြောဆုံးမမှု အခြေခံများကို အပြည့်အဝ နှလုံးသွင်းထားသော "ဓမ္မမိတ်ဆွေ AI Assistant" ဖြစ်သည်။
