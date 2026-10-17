@@ -362,9 +362,9 @@ class _DhammaAiChatPageState extends State<DhammaAiChatPage> {
   bool _isLoading = false;
 
   
-  #final String _geminiApiKey = dotenv.env['GEMINI_API_KEY'] ?? '';
+  
 // API Key ယူသည့်နေရာတွင် Env မရှိပါက Environment variable မှ ယူရန်:
-final String _geminiApiKey = dotenv.env['GEMINI_API_KEY'] ?? 
+  final String _geminiApiKey = dotenv.env['GEMINI_API_KEY'] ?? 
     const String.fromEnvironment('GEMINI_API_KEY', defaultValue: '');
 
   final String _systemPrompt = '''
