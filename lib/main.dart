@@ -14,7 +14,7 @@ void main() async {
     anonKey: 'sb_publishable_yqYIBYJvSVuBi33UyHp58A_okcU0--P',
   );
 	// .env ဖိုင်ကို ဖတ်ရှုရန်
-  #await dotenv.load(fileName: ".env");
+  //await dotenv.load(fileName: ".env");
   // .env ဖိုင် မရှိပါက Error မတက်စေရန် try-catch အုပ်ထားပါ
   try {
     await dotenv.load(fileName: ".env");
